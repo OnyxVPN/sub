@@ -1,142 +1,144 @@
 vless://e4a52f75-474e-449e-bcd2-05ea177f1403@104.31.16.160:80?path=%2F&security=none&encryption=none&host=dbdid89lh.%E4%BA%8B%E5%87%BA%E5%9C%BA%E6%AC%A1%E4%BB%A5%E8%BF%907.tech&type=ws#%DA%A9%D8%A7%D9%86%D8%A7%D9%84+%D9%85%D8%A7+%D8%AF%D8%B1+%D8%AA%D9%84%DA%AF%D8%B1%D8%A7%D9%85%3A+V2rayng_Fast%40{
-    "dns": {
-        "hosts": {
-            "domain:googleapis.cn": "googleapis.com"
+
+    {
+        "dns": {
+            "hosts": {
+                "domain:googleapis.cn": "googleapis.com"
+            },
+            "servers": [
+                "1.1.1.1"
+            ]
         },
-        "servers": [
-            "1.1.1.1"
-        ]
-    },
-    "inbounds": [
-        {
-            "listen": "127.0.0.1",
-            "port": 10808,
-            "protocol": "socks",
-            "settings": {
-                "auth": "noauth",
-                "udp": true,
-                "userLevel": 8
-            },
-            "sniffing": {
-                "destOverride": [
-                    "http",
-                    "tls"
-                ],
-                "enabled": true
-            },
-            "tag": "socks"
-        },
-        {
-            "listen": "127.0.0.1",
-            "port": 10809,
-            "protocol": "http",
-            "settings": {
-                "userLevel": 8
-            },
-            "tag": "http"
-        }
-    ],
-    "log": {
-        "loglevel": "warning"
-    },
-    "outbounds": [
-        {
-            "mux": {
-                "concurrency": 8,
-                "enabled": true,
-                "xudpConcurrency": 1024,
-                "xudpProxyUDP443": "reject"
-            },
-            "protocol": "vless",
-            "settings": {
-                "vnext": [
-                    {
-                        "address": "discord.com",
-                        "port": 2083,
-                        "users": [
-                            {
-                                "encryption": "none",
-                                "flow": "",
-                                "id": "06882b88-d4b0-42bf-b273-4b161de7baf3",
-                                "level": 8,
-                                "security": "auto"
-                            }
-                        ]
-                    }
-                ]
-            },
-            "streamSettings": {
-                "grpcSettings": {
-                    "multiMode": false,
-                    "serviceName": "@kingofilter"
-                },
-                "network": "grpc",
-                "security": "tls",
-                "tlsSettings": {
-                    "allowInsecure": false,
-                    "alpn": [
-                        "h2",
-                        "http/1.1"
-                    ],
-                    "fingerprint": "edge",
-                    "publicKey": "",
-                    "serverName": "p.lars1.nl",
-                    "shortId": "",
-                    "show": false,
-                    "spiderX": ""
-                },
-                "sockopt": {
-                    "dialerProxy": "fragment",
-                    "tcpKeepAliveIdle": 100,
-                    "tcpNoDelay": true
-                }
-            },
-            "tag": "proxy"
-        },
-        {
-            "tag": "fragment",
-            "protocol": "freedom",
-            "settings": {
-                "domainStrategy": "AsIs",
-                "fragment": {
-                    "packets": "tlshello",
-                    "length": "100-200",
-                    "interval": "10-20"
-                }
-            },
-            "streamSettings": {
-                "sockopt": {
-                    "tcpKeepAliveIdle": 100,
-                    "tcpNoDelay": true
-                }
-            }
-        },
-        {
-            "protocol": "freedom",
-            "settings": {},
-            "tag": "direct"
-        },
-        {
-            "protocol": "blackhole",
-            "settings": {
-                "response": {
-                    "type": "http"
-                }
-            },
-            "tag": "block"
-        }
-    ],
-    "routing": {
-        "domainStrategy": "IPIfNonMatch",
-        "rules": [
+        "inbounds": [
             {
-                "ip": [
-                    "1.1.1.1"
-                ],
-                "outboundTag": "proxy",
-                "port": "53",
-                "type": "field"
+                "listen": "127.0.0.1",
+                "port": 10808,
+                "protocol": "socks",
+                "settings": {
+                    "auth": "noauth",
+                    "udp": true,
+                    "userLevel": 8
+                },
+                "sniffing": {
+                    "destOverride": [
+                        "http",
+                        "tls"
+                    ],
+                    "enabled": true
+                },
+                "tag": "socks"
+            },
+            {
+                "listen": "127.0.0.1",
+                "port": 10809,
+                "protocol": "http",
+                "settings": {
+                    "userLevel": 8
+                },
+                "tag": "http"
             }
-        ]
+        ],
+        "log": {
+            "loglevel": "warning"
+        },
+        "outbounds": [
+            {
+                "mux": {
+                    "concurrency": 8,
+                    "enabled": true,
+                    "xudpConcurrency": 1024,
+                    "xudpProxyUDP443": "reject"
+                },
+                "protocol": "vless",
+                "settings": {
+                    "vnext": [
+                        {
+                            "address": "discord.com",
+                            "port": 2083,
+                            "users": [
+                                {
+                                    "encryption": "none",
+                                    "flow": "",
+                                    "id": "06882b88-d4b0-42bf-b273-4b161de7baf3",
+                                    "level": 8,
+                                    "security": "auto"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "streamSettings": {
+                    "grpcSettings": {
+                        "multiMode": false,
+                        "serviceName": "@vmesskhodam,@vmesskhodam,@vmesskhodam,@vmesskhodam"
+                    },
+                    "network": "grpc",
+                    "security": "tls",
+                    "tlsSettings": {
+                        "allowInsecure": false,
+                        "alpn": [
+                            "h2",
+                            "http/1.1"
+                        ],
+                        "fingerprint": "edge",
+                        "publicKey": "",
+                        "serverName": "p.lars1.nl",
+                        "shortId": "",
+                        "show": false,
+                        "spiderX": ""
+                    },
+                    "sockopt": {
+                        "dialerProxy": "fragment",
+                        "tcpKeepAliveIdle": 100,
+                        "tcpNoDelay": true
+                    }
+                },
+                "tag": "proxy"
+            },
+            {
+                "tag": "fragment",
+                "protocol": "freedom",
+                "settings": {
+                    "domainStrategy": "AsIs",
+                    "fragment": {
+                        "packets": "tlshello",
+                        "length": "100-200",
+                        "interval": "10-20"
+                    }
+                },
+                "streamSettings": {
+                    "sockopt": {
+                        "tcpKeepAliveIdle": 100,
+                        "tcpNoDelay": true
+                    }
+                }
+            },
+            {
+                "protocol": "freedom",
+                "settings": {},
+                "tag": "direct"
+            },
+            {
+                "protocol": "blackhole",
+                "settings": {
+                    "response": {
+                        "type": "http"
+                    }
+                },
+                "tag": "block"
+            }
+        ],
+        "routing": {
+            "domainStrategy": "IPIfNonMatch",
+            "rules": [
+                {
+                    "ip": [
+                        "1.1.1.1"
+                    ],
+                    "outboundTag": "proxy",
+                    "port": "53",
+                    "type": "field"
+                }
+            ]
+        }
     }
-}
