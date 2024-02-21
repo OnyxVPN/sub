@@ -1,1 +1,145 @@
-{"dns":{"hosts":{"domain:googleapis.cn":"googleapis.com"},"servers":["1.1.1.1"]},"inbounds":[{"listen":"127.0.0.1","port":10808,"protocol":"socks","settings":{"auth":"noauth","udp":true,"userLevel":8},"sniffing":{"destOverride":["http","tls"],"enabled":true},"tag":"socks"},{"listen":"127.0.0.1","port":10809,"protocol":"http","settings":{"userLevel":8},"tag":"http"}],"log":{"loglevel":"warning"},"outbounds":[{"mux":{"concurrency":0,"enabled":true,"xudpConcurrency":15,"xudpProxyUDP443":"reject"},"protocol":"vless","settings":{"vnext":[{"address":"ic.v2logy.xyz","port":2096,"users":[{"encryption":"none","flow":"","id":"f90d9493-d5e9-4f5b-9c6c-0a157d987cee","level":8,"security":"auto"}]}]},"streamSettings":{"grpcSettings":{"multiMode":false,"serviceName":""},"network":"grpc","security":"tls","tlsSettings":{"allowInsecure":true,"alpn":["http/1.1"],"fingerprint":"chrome","publicKey":"","serverName":"re6.v2logy.xyz","shortId":"","show":false,"spiderX":""},"sockopt":{"dialerProxy":"fragment","tcpKeepAliveIdle":100,"tcpNoDelay":true}},"tag":"proxy"},{"tag":"fragment","protocol":"freedom","settings":{"domainStrategy":"AsIs","fragment":{"packets":"tlshello","length":"100-200","interval":"10-20"}},"streamSettings":{"sockopt":{"tcpKeepAliveIdle":100,"tcpNoDelay":true}}},{"protocol":"freedom","settings":{},"tag":"direct"},{"protocol":"blackhole","settings":{"response":{"type":"http"}},"tag":"block"}],"routing":{"domainStrategy":"IPIfNonMatch","rules":[{"ip":["1.1.1.1"],"outboundTag":"proxy","port":"53","type":"field"}]}}
+{
+    "dns": {
+        "hosts": {
+            "domain:googleapis.cn": "googleapis.com"
+        },
+        "servers": [
+            "8.8.8.8"
+        ]
+    },
+    "inbounds": [
+        {
+            "listen": "127.0.0.1",
+            "port": 10808,
+            "protocol": "socks",
+            "settings": {
+                "auth": "noauth",
+                "udp": true,
+                "userLevel": 8
+            },
+            "sniffing": {
+                "destOverride": [
+                    "http",
+                    "tls"
+                ],
+                "enabled": true
+            },
+            "tag": "socks"
+        },
+        {
+            "listen": "127.0.0.1",
+            "port": 10809,
+            "protocol": "http",
+            "settings": {
+                "userLevel": 8
+            },
+            "tag": "http"
+        }
+    ],
+    "log": {
+        "loglevel": "warning"
+    },
+    "outbounds": [
+        {
+            "mux": {
+                "concurrency": 8,
+                "enabled": true,
+                "xudpConcurrency": 8,
+                "xudpProxyUDP443": "reject"
+            },
+            "protocol": "vless",
+            "settings": {
+                "vnext": [
+                    {
+                        "address": "172.64.162.229",
+                        "port": 2053,
+                        "users": [
+                            {
+                                "encryption": "none",
+                                "flow": "",
+                                "id": "_Mahanvpn___",
+                                "level": 8,
+                                "security": "auto"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "streamSettings": {
+                "network": "ws",
+                "security": "tls",
+                "sockopt": {
+                    "dialerProxy": "fragment",
+                    "tcpKeepAliveIdle": 100,
+                    "tcpNoDelay": true
+                },
+                "tlsSettings": {
+                    "allowInsecure": true,
+                    "alpn": [
+                        "h3",
+                        "h2",
+                        "http/1.1"
+                    ],
+                    "fingerprint": "chrome",
+                    "publicKey": "",
+                    "serverName": "superspeed-mahan-system-wellvery.mahkhanbot.sbs",
+                    "shortId": "",
+                    "show": false,
+                    "spiderX": ""
+                },
+                "wsSettings": {
+                    "headers": {
+                        "Host": "superspeed-mahan-system-wellvery.mahkhanbot.sbs"
+                    },
+                    "path": "/"
+                }
+            },
+            "tag": "proxy"
+        },
+        {
+            "tag": "fragment",
+            "protocol": "freedom",
+            "settings": {
+                "domainStrategy": "AsIs",
+                "fragment": {
+                    "packets": "tlshello",
+                    "length": "100-200",
+                    "interval": "10-20"
+                }
+            },
+            "streamSettings": {
+                "sockopt": {
+                    "tcpKeepAliveIdle": 100,
+                    "tcpNoDelay": true
+                }
+            }
+        },
+        {
+            "protocol": "freedom",
+            "settings": {},
+            "tag": "direct"
+        },
+        {
+            "protocol": "blackhole",
+            "settings": {
+                "response": {
+                    "type": "http"
+                }
+            },
+            "tag": "block"
+        }
+    ],
+    "routing": {
+        "domainStrategy": "IPIfNonMatch",
+        "rules": [
+            {
+                "ip": [
+                    "8.8.8.8"
+                ],
+                "outboundTag": "proxy",
+                "port": "53",
+                "type": "field"
+            }
+        ]
+    }
+}
