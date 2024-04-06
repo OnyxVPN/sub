@@ -1,145 +1,157 @@
 {
-    "dns": {
-        "hosts": {
-            "domain:googleapis.cn": "googleapis.com"
-        },
-        "servers": [
-            "8.8.8.8"
-        ]
+    "remarks": "MahanvpnFast_mtn_mci (Fragment)",
+    "log": {
+      "access": "",
+      "error": "",
+      "loglevel": "warning"
     },
     "inbounds": [
-        {
-            "listen": "127.0.0.1",
-            "port": 10808,
-            "protocol": "socks",
-            "settings": {
-                "auth": "noauth",
-                "udp": true,
-                "userLevel": 8
-            },
-            "sniffing": {
-                "destOverride": [
-                    "http",
-                    "tls"
-                ],
-                "enabled": true
-            },
-            "tag": "socks"
+      {
+        "tag": "socks",
+        "port": 10808,
+        "listen": "127.0.0.1",
+        "protocol": "socks",
+        "sniffing": {
+          "enabled": true,
+          "destOverride": [
+            "http",
+            "tls"
+          ],
+          "routeOnly": false
         },
-        {
-            "listen": "127.0.0.1",
-            "port": 10809,
-            "protocol": "http",
-            "settings": {
-                "userLevel": 8
-            },
-            "tag": "http"
+        "settings": {
+          "auth": "noauth",
+          "udp": true,
+          "allowTransparent": false
         }
+      },
+      {
+        "tag": "http",
+        "port": 10809,
+        "listen": "127.0.0.1",
+        "protocol": "http",
+        "sniffing": {
+          "enabled": true,
+          "destOverride": [
+            "http",
+            "tls"
+          ],
+          "routeOnly": false
+        },
+        "settings": {
+          "auth": "noauth",
+          "udp": true,
+          "allowTransparent": false
+        }
+      }
     ],
-    "log": {
-        "loglevel": "warning"
-    },
     "outbounds": [
-        {
-            "mux": {
-                "concurrency": 8,
-                "enabled": true,
-                "xudpConcurrency": 8,
-                "xudpProxyUDP443": "reject"
-            },
-            "protocol": "vless",
-            "settings": {
-                "vnext": [
-                    {
-                        "address": "172.64.162.229",
-                        "port": 2053,
-                        "users": [
-                            {
-                                "encryption": "none",
-                                "flow": "",
-                                "id": "_Mahanvpn___",
-                                "level": 8,
-                                "security": "auto"
-                            }
-                        ]
-                    }
-                ]
-            },
-            "streamSettings": {
-                "network": "ws",
-                "security": "tls",
-                "sockopt": {
-                    "dialerProxy": "fragment",
-                    "tcpKeepAliveIdle": 100,
-                    "tcpNoDelay": true
-                },
-                "tlsSettings": {
-                    "allowInsecure": true,
-                    "alpn": [
-                        "h3",
-                        "h2",
-                        "http/1.1"
-                    ],
-                    "fingerprint": "chrome",
-                    "publicKey": "",
-                    "serverName": "superspeed-mahan-system-wellvery.mahkhanbot.sbs",
-                    "shortId": "",
-                    "show": false,
-                    "spiderX": ""
-                },
-                "wsSettings": {
-                    "headers": {
-                        "Host": "superspeed-mahan-system-wellvery.mahkhanbot.sbs"
-                    },
-                    "path": "/"
+      {
+        "tag": "proxy",
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "188.114.97.3",
+              "port": 443,
+              "users": [
+                {
+                  "id": "MahanVPN-TEAM",
+                  "alterId": 0,
+                  "email": "t@t.tt",
+                  "security": "auto",
+                  "encryption": "none",
+                  "flow": ""
                 }
-            },
-            "tag": "proxy"
-        },
-        {
-            "tag": "fragment",
-            "protocol": "freedom",
-            "settings": {
-                "domainStrategy": "AsIs",
-                "fragment": {
-                    "packets": "tlshello",
-                    "length": "100-200",
-                    "interval": "10-20"
-                }
-            },
-            "streamSettings": {
-                "sockopt": {
-                    "tcpKeepAliveIdle": 100,
-                    "tcpNoDelay": true
-                }
+              ]
             }
+          ]
         },
-        {
-            "protocol": "freedom",
-            "settings": {},
-            "tag": "direct"
+        "streamSettings": {
+          "network": "ws",
+          "security": "tls",
+          "tlsSettings": {
+            "allowInsecure": false,
+            "serverName": "Dl3.ArManvpn.ToP",
+            "alpn": [
+              "h2",
+              "http/1.1"
+            ],
+            "fingerprint": "chrome",
+            "show": false
+          },
+          "wsSettings": {
+            "path": "/",
+            "headers": {
+              "Host": "Dl3.ArManvpn.ToP"
+            }
+          },
+          "sockopt": {
+            "dialerProxy": "fragment",
+            "tcpKeepAliveIdle": 100,
+            "mark": 255,
+            "tcpNoDelay": true
+          }
         },
-        {
-            "protocol": "blackhole",
-            "settings": {
-                "response": {
-                    "type": "http"
-                }
-            },
-            "tag": "block"
+        "mux": {
+          "enabled": true,
+          "concurrency": 0,
+          "xudpConcurrency": 0,
+          "xudpProxyUDP443": "reject"
         }
+      },
+      {
+        "tag": "fragment",
+        "protocol": "freedom",
+        "settings": {
+          "domainStrategy": "AsIs",
+          "fragment": {
+            "packets": "tlshello",
+            "length": "10-20",
+            "interval": "10-20"
+          }
+        },
+        "streamSettings": {
+          "sockopt": {
+            "tcpNoDelay": true,
+            "tcpKeepAliveIdle": 100
+          }
+        }
+      },
+      {
+        "tag": "direct",
+        "protocol": "freedom",
+        "settings": {}
+      },
+      {
+        "tag": "block",
+        "protocol": "blackhole",
+        "settings": {
+          "response": {
+            "type": "http"
+          }
+        }
+      }
     ],
     "routing": {
-        "domainStrategy": "IPIfNonMatch",
-        "rules": [
-            {
-                "ip": [
-                    "8.8.8.8"
-                ],
-                "outboundTag": "proxy",
-                "port": "53",
-                "type": "field"
-            }
-        ]
+      "domainStrategy": "AsIs",
+      "rules": [
+        {
+          "type": "field",
+          "inboundTag": [
+            "api"
+          ],
+          "outboundTag": "api",
+          "enabled": true
+        },
+        {
+          "id": "5627785659655799759",
+          "type": "field",
+          "port": "0-65535",
+          "outboundTag": "proxy",
+          "enabled": true
+        }
+      ]
     }
-}
+  }
+  
