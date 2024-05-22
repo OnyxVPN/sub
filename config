@@ -15,7 +15,7 @@ vless://341fd605-2f09-4c3e-8e0a-3ec854493224@185.146.173.122:8080?type=ws&host=h
 vless://ff4ea7f8-7a02-4410-a631-039020da61de@185.146.173.122:8443?type=ws&host=shjhjb.servernet.cfd.&path=/&security=tls&fp=random&sni=shjhjb.servernet.cfd&alpn=h2,http/1.1#15.JoinTel:@Kingofilter
 vless://be907b15-7889-489b-a2ec-7fdd35344aa9@188.114.98.224:2095?type=ws&host=V2ray-_-_-_-_-_-ShhProxy.TelegramChannelJoinBede.com.&path=/&security=none#16.JoinTel:@Kingofilter
 vless://VPNCUSTOMiZE@188.114.98.224:8080?type=ws&host=VPNCUSTOMIZE.V2ray.Community.&path=/Join--VPNCUSTOMIZE.V2ray.re?ed%3D8080&security=none#17.JoinTel:@Kingofilter
-vless://VPNCUSTOMiZE@Join--VPNCUSTOMIZE.V2ray.re:8080?path=%2FJoin--VPNCUSTOMIZE.V2ray.re%3Fed%3D8080&security=none&encryption=none&host=VPNCUSTOMIZE.V2ray.Community.&type=ws#@18.JoinTel:@Kingofilter
+vless://VPNCUSTOMiZE@Join--VPNCUSTOMIZE.V2ray.re:8080?path=%2FJoin--VPNCUSTOMIZE.V2ray.re%3Fed%3D8080&security=none&encryption=none&host=VPNCUSTOMIZE.V2ray.Community.&type=ws#18.JoinTel:@Kingofilter
 vless://VPNCUSTOMiZE@188.114.98.224:8080?path=%2FJoin--VPNCUSTOMIZE.V2ray.re%3Fed%3D8080&security=none&encryption=none&host=VPNCUSTOMIZE.V2ray.Community.&type=ws#19.JoinTel:@Kingofilter
 vless://1eb5e82f-a673-49b4-bd74-df04583e9011@v2ray1ng.pages.dev:443?path=%2F%40V2ray1_ng%2C%40V2ray1_ng%2C%40V2ray1_ng&security=tls&encryption=none&host=v2ray1ng.pages.dev&fp=randomized&type=ws&sni=v2ray1ng.pages.dev#20.JoinTel:@Kingofilter
 vless://zigma-config-bot-2338@212.80.19.27:8443?security=none&encryption=none&host=www.speedtest.net&headerType=http&type=tcp#21.JoinTel:@Kingofilter
