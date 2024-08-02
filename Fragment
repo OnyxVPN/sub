@@ -1,1 +1,190 @@
-[{"inbounds":[{"listen":"127.0.0.1","port":10808,"protocol":"socks","settings":{"auth":"noauth","udp":true,"userLevel":8},"sniffing":{"destOverride":["http","tls"],"enabled":true,"routeOnly":false},"tag":"socks"},{"listen":"127.0.0.1","port":10809,"protocol":"http","settings":{"userLevel":8},"tag":"http"}],"log":{"loglevel":"none"},"outbounds":[{"mux":{"concurrency":1,"enabled":true,"xudpConcurrency":1,"xudpProxyUDP443":"allow"},"protocol":"vless","settings":{"vnext":[{"address":"www.parspack.com","port":80,"users":[{"encryption":"none","flow":"","id":"Tel-VPNCUSTOMIZE","level":8,"security":"auto"}]}]},"streamSettings":{"network":"ws","security":"","wsSettings":{"headers":{"Host":"VPNcustomize-vpnCUSTOMIZE-VPNcustomize.CUSTOMIZEspeedtest.net.","User-Agent":"@VPNCUSTOMIZE_@VPNCUSTOMIZE_@VPNCUSTOMIZE_@VPNCUSTOMIZE"},"path":"VPNCUSTOMIZE?ed=2048"}},"tag":"proxy"},{"protocol":"freedom","settings":{},"tag":"direct"},{"protocol":"blackhole","settings":{"response":{"type":"http"}},"tag":"block"}],"policy":{"levels":{"8":{"connIdle":300,"downlinkOnly":1,"handshake":4,"uplinkOnly":1}},"system":{"statsOutboundUplink":true,"statsOutboundDownlink":true}},"routing":{"domainStrategy":"AsIs","rules":[{"outboundTag":"proxy","port":"0-65535"}]},"stats":{},"remarks":"@Kingofilter"}]
+[{"inbounds":[{"listen":"127.0.0.1","port":10808,"protocol":"socks","settings":{"auth":"noauth","udp":true,"userLevel":8},"sniffing":{"destOverride":["http","tls"],"enabled":true,"routeOnly":false},"tag":"socks"},{"listen":"127.0.0.1","port":10809,"protocol":"http","settings":{"userLevel":8},"tag":"http"}],"log":{"loglevel":"none"},"outbounds":[{"mux":{"concurrency":1,"enabled":true,"xudpConcurrency":1,"xudpProxyUDP443":"allow"},"protocol":"vless","settings":{"vnext":[{"address":"www.parspack.com","port":80,"users":[{"encryption":"none","flow":"","id":"Tel-VPNCUSTOMIZE","level":8,"security":"auto"}]}]},"streamSettings":{"network":"ws","security":"","wsSettings":{"headers":{"Host":"VPNcustomize-vpnCUSTOMIZE-VPNcustomize.CUSTOMIZEspeedtest.net.","User-Agent":"@VPNCUSTOMIZE_@VPNCUSTOMIZE_@VPNCUSTOMIZE_@VPNCUSTOMIZE"},"path":"VPNCUSTOMIZE?ed=2048"}},"tag":"proxy"},{"protocol":"freedom","settings":{},"tag":"direct"},{"protocol":"blackhole","settings":{"response":{"type":"http"}},"tag":"block"}],"policy":{"levels":{"8":{"connIdle":300,"downlinkOnly":1,"handshake":4,"uplinkOnly":1}},"system":{"statsOutboundUplink":true,"statsOutboundDownlink":true}},"routing":{"domainStrategy":"AsIs","rules":[{"outboundTag":"proxy","port":"0-65535"}]},"stats":{},"remarks":"@Kingofilter"}
+,
+{
+    "dns": {
+    "hosts": {
+    "domain:googleapis.cn": "googleapis.com"
+    },
+    "servers": [
+    "1.1.1.1",
+    {
+    "address": "1.0.0.1",
+    "domains": [
+    "geosite:cn",
+    "geosite:geolocation-cn"
+    ],
+    "expectIPs": [
+    "geoip:cn"
+    ],
+    "port": 53
+    }
+    ]
+    },
+    "inbounds": [
+    {
+    "listen": "127.0.0.1",
+    "port": 10808,
+    "protocol": "socks",
+    "settings": {
+    "auth": "noauth",
+    "udp": true,
+    "userLevel": 8
+    },
+    "sniffing": {
+    "destOverride": [
+    "http",
+    "tls"
+    ],
+    "enabled": true,
+    "routeOnly": false
+    },
+    "tag": "socks"
+    },
+    {
+    "listen": "127.0.0.1",
+    "port": 10809,
+    "protocol": "http",
+    "settings": {
+    "userLevel": 8
+    },
+    "tag": "http"
+    }
+    ],
+    "log": {
+    "loglevel": "warning"
+    },
+    "outbounds": [
+    {
+    "mux": {
+    "concurrency": -1,
+    "enabled": false,
+    "xudpConcurrency": 8,
+    "xudpProxyUDP443": ""
+    },
+    "protocol": "vless",
+    "settings": {
+    "vnext": [
+    {
+    "address": "162.251.82.56",
+    "port": 8880,
+    "users": [
+    {
+    "encryption": "none",
+    "flow": "",
+    "id": "Mahan_VPn_mci",
+    "level": 8,
+    "security": "auto"
+    }
+    ]
+    }
+    ]
+    },
+    "streamSettings": {
+    "network": "ws",
+    "security": "",
+    "wsSettings": {
+    "headers": {
+    "Host": "mahanv2raygmsix6.6.6.6.ir.com.site.列列男事的事列上赛男.SetMedia.site.stn8.MahaNmrz.ToP."
+    },
+    "path": "/mci?ed=2053"
+    },
+    "sockopt": {
+    "dialerProxy": "fragment",
+    "tcpKeepAliveIdle": 100,
+    "tcpNoDelay": true
+    }
+    },
+    "tag": "proxy"
+    },
+    {
+    "tag": "fragment",
+    "protocol": "freedom",
+    "settings": {
+    "domainStrategy": "AsIs",
+    "fragment": {
+    "packets": "tlshello",
+    "length": "1-2",
+    "interval": "1-2"
+    }
+    },
+    "streamSettings": {
+    "sockopt": {
+    "tcpKeepAliveIdle": 100,
+    "tcpNoDelay": true
+    }
+    }
+    },
+    {
+    "protocol": "freedom",
+    "settings": {
+    "domainStrategy": "UseIP"
+    },
+    "tag": "direct"
+    },
+    {
+    "protocol": "blackhole",
+    "settings": {
+    "response": {
+    "type": "http"
+    }
+    },
+    "tag": "block"
+    }
+    ],
+    "remarks": "🇩🇪Mahanvpn- MCI ✓",
+    "routing": {
+    "domainStrategy": "IPIfNonMatch",
+    "rules": [
+    {
+    "ip": [
+    "1.1.1.1"
+    ],
+    "outboundTag": "proxy",
+    "port": "53"
+    },
+    {
+    "ip": [
+    "1.0.0.1"
+    ],
+    "outboundTag": "direct",
+    "port": "53"
+    },
+    {
+    "domain": [
+    "domain:googleapis.cn",
+    "domain:gstatic.com"
+    ],
+    "outboundTag": "proxy"
+    },
+    {
+    "ip": [
+    "geoip:private"
+    ],
+    "outboundTag": "direct"
+    },
+    {
+    "ip": [
+    "geoip:cn"
+    ],
+    "outboundTag": "direct"
+    },
+    {
+    "domain": [
+    "geosite:cn"
+    ],
+    "outboundTag": "direct"
+    },
+    {
+    "domain": [
+    "geosite:geolocation-cn"
+    ],
+    "outboundTag": "direct"
+    },
+    {
+    "outboundTag": "proxy",
+    "port": "0-65535"
+    }
+    ]
+    }
+   }]
+   
